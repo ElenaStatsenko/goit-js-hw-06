@@ -11,8 +11,15 @@ const images = [
     url: 'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     alt: 'Group of Horses Running',
   },
-]
+];
  
 
 
-for(let image of images) document.querySelector('.gallery').insertAdjacentHTML('beforeEnd', `<li><img src="${image.url}" alt="${image.alt}"></li>`);
+const ulEl = document.querySelector('.gallery')
+
+images.forEach((image) =>
+  ulEl.insertAdjacentHTML(
+    'beforeEnd',
+    `<li><img src="${image.url}" alt="${image.alt}"></li>`
+  )
+);
